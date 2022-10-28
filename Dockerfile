@@ -37,8 +37,10 @@ COPY --from=rover /src/rover /bin/rover
 RUN chmod +x /bin/rover
 
 # Install Google Chrome
-RUN apk add chromium
-
+RUN apk add chromium py3-pip
+RUN apk add gcc musl-dev python3-dev libffi-dev openssl-dev cargo make
+RUN pip install --upgrade pip
+RUN pip install azure-cli
 WORKDIR /src
 
 ENTRYPOINT [ "/bin/rover" ]
