@@ -24,7 +24,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v3
         with:
-          images: pknw1/rover
+          images: pknw1/rover_az
       
       - name: Build and push Docker image
         uses: docker/build-push-action@v2
